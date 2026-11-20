@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0d12"><meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="MUSICTOOL">
+<link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="styles.css"><title>MUSICTOOL DAW</title></head>
+<body>
+<header><select id="proj"></select><button id="newp" title="Proyecto nuevo">＋</button><input id="name" aria-label="Nombre"><label>BPM <input id="bpm" type="number" inputmode="numeric" min="40" max="240"></label></header>
+<div id="bar"><button id="stop">■</button><button id="play">▶</button><button id="rec">●</button><button id="met" title="Metrónomo">♪</button><span id="pos">0:00.0</span></div>
+<main>
+<section id="v-playlist">
+<details><summary>Entrada, monitorización y cuenta</summary>
+<p><button id="micb">Activar micrófono / entrada</button></p>
+<p><select id="dev"><option value="">Entrada predeterminada</option></select></p>
+<p><label><input type="checkbox" id="mon"> Monitorizar entrada (software)</label> <input type="range" id="monv" min="0" max="1" step=".01" value=".8"></p>
+<p class="warn">⚠ La monitorización por software tiene latencia. Usa auriculares para evitar realimentación.</p>
+<p><label>Cuenta previa <select id="cnt"><option value="0">Ninguna</option><option value="1" selected>1 compás</option><option value="2">2 compases</option></select></label></p>
+</details>
+<div id="tracks"></div><button id="addt" class="wide">＋ Pista</button>
+</section>
+<section id="v-mixer" hidden class="ph">Mixer: Fase 4. Por ahora usa Vol, Pan, M y S en cada pista.</section>
+<section id="v-piano" hidden class="ph">Piano Roll: Fase 5.</section>
+<section id="v-drum" hidden class="ph">Batería: Fase 6.</section>
+<section id="v-tool" hidden class="ph">MUSICTOOL: aquí se integrarán Afinador, Escalas, Acordes y Progresiones cuando se aporte su código.</section>
+</main>
+<nav><button data-v="playlist" class="on">Playlist</button><button data-v="mixer">Mixer</button><button data-v="piano">Piano</button><button data-v="drum">Batería</button><button data-v="tool">MUSICTOOL</button></nav>
+<script type="module" src="app.js"></script>
+</body></html>
